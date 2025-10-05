@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Experiment 5: CSS Selectors</title>
+<style>
+h1 {
+  color: blue;
+}
+
+p {
+  color: green;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+#main-title {
+  color: darkblue;
+}
+
+h2, p, li {
+  border: 1px solid gray;
+}
+
+div p {
+  color: brown;
+}
+
+div > ul > li {
+  color: purple;
+}
+
+input[type="text"] {
+  border: 1px solid blue;
+}
+
+input[type="password"] {
+  border: 1px solid red;
+}
+
+a:hover {
+  color: red;
+}
+
+ul li:first-child {
+  font-weight: bold;
+}
+
+p::first-letter {
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<h1 id="main-title">Experiment 5: CSS Selectors</h1>
+<p>This experiment is about using different CSS selectors.</p>
+<p class="highlight">This is an example of a class selector.</p>
+<div>
+  <p>This paragraph is inside a div.</p>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+</div>
+<img src="wallpaper.jpg" alt="Sample Image" width="200">
+
+
+</html>
