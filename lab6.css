@@ -1,0 +1,16 @@
+h1{
+    color: darkblue;
+    text-align: center;
+}
+.item{
+    background-color: skyblue;
+    align-self: center;
+    gap: 20px;
+    flex-direction: column;
+    order: 100;
+    margin: 0px;
+}
+#id{
+    background-color: skyblue;
+    align-self: flex-end;
+}
