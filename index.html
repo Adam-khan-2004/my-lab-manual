@@ -2,39 +2,97 @@
 <html>
 <head>
     <title>My Online Lab Manual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: darkgreen;
+            color: white;
+            padding: 15px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px;
+        }
+
+        .card {
+            border: 3px solid darkgreen;
+            background-color: white;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <h1>My Online Lab Manual</h1>
     <p>This is my personal collection of lab experiments.</p>
 
-    <div>
-        <img src="img1.jpg" alt="Lab 1 Image" style="width:300px; height:auto;">
-        <p><a href="lab1.html">View Lab 1: HTML Basics</a></p>
-    </div>
+    <div class="container">
+        <div class="card">
+            <img src="img1.jpg" alt="Lab 1 Image">
+            <p><a href="lab1.html">View Lab 1: HTML Basics</a></p>
+        </div>
 
-    <div>
-        <img src="img2.jpg" alt="GitHub Repository" style="width:300px; height:auto;">
-        <p><a href="https://github.com/yourusername">My GitHub Repository</a></p>
-    </div>
+        <div class="card">
+            <img src="img2.jpg" alt="GitHub Repository">
+            <p><a href="https://github.com/yourusername">My GitHub Repository</a></p>
+        </div>
 
-    <div>
-        <img src="Capture.PNG" alt="Lab 3 Image" style="width:300px; height:auto;">
-        <p><a href="lab3.html">View Lab 3</a></p>
-    </div>
+        <div class="card">
+            <img src="Capture.PNG" alt="Lab 3 Image">
+            <p><a href="lab3.html">View Lab 3</a></p>
+        </div>
 
-    <div>
-        <img src="lab4.PNG" alt="Lab 4 Image" style="width:300px; height:auto;">
-        <p><a href="lab4.html">View Lab 4: CSS Styling</a></p>
-    </div>
+        <div class="card">
+            <img src="lab4.PNG" alt="Lab 4 Image">
+            <p><a href="lab4.html">View Lab 4: CSS Styling</a></p>
+        </div>
 
-    <div>
-        <img src="lab5.PNG" alt="Lab 5 Image" style="width:300px; height:auto;">
-        <p><a href="lab5.html">Experiment 5: CSS Selectors</a></p>
-    </div>
+        <div class="card">
+            <img src="lab5.PNG" alt="Lab 5 Image">
+            <p><a href="lab5.html">Experiment 5: CSS Selectors</a></p>
+        </div>
 
+        <div class="card">
+            <img src="lab6.PNG" alt="Lab 6 Image">
+            <p><a href="lab6.html">Experiment 6: Handout Updation</a></p>
+        </div>
+    </div>
 </body>
 </html>
-
 
 
 
