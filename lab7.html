@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Fundamentals & Console Programming</h1>
+    <p>Following are tasks</p>
+
+    <h2>Task1: Click on following button</h2>
+    <button onclick="adam()">Task1: Show name and Registration ID</button>
+
+    <script>
+        function adam() {
+            var name = prompt("Enter your name");                                       
+            var reg = prompt("Enter your registration #:");                                 
+            alert(name + " " + reg);
+        }
+    </script>
+
+    <h3>Task2: Enter the following numbers and then click the button</h3>
+    
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="bilal()">Task2: Arithmetic and Comparison Operations</button>
+
+    <p id="result"></p>
+
+    <script> 
+        function bilal() {
+            var num = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerHTML = 
+                "Sum: " + (num + num2) + "<br>" +
+                "Difference: " + (num - num2) + "<br>" +
+                "Product: " + (num * num2) + "<br>" +
+                "Quotient: " + (num / num2) + "<br>" +
+                "Comparison (num > num2): " + (num > num2);
+        }
+    </script>
+</body>
+</html>
