@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        #box1, #box2, #circle {
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            display: inline-block;
+        }
+
+        #box1 {
+            background-color: lightblue;
+        }
+
+        #box2 {
+            background-color: lightgreen;
+        }
+
+        #circle {
+            background-color: pink;
+            border-radius: 50%;
+        }
+
+        #textBlock {
+            padding: 10px;
+            display: inline-block;
+            background-color: lightgray;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Simple Interactive Elements</h2>
+
+    <!-- Element 1 -->
+    <button id="btn">Click me (change my color)</button>
+    <br><br>
+
+    <!-- Element 2 -->
+    <div id="box1"></div>
+
+    <!-- Element 3 -->
+    <div id="box2"></div>
+
+    <!-- Element 4 -->
+    <div id="circle"></div>
+
+    <!-- Element 5 -->
+    <p id="textBlock">Hover over me to hide/show text</p>
+
+    <script>
+        // 1. Button click → change its own color (using "this")
+        document.getElementById("btn").onclick = function () {
+            this.style.backgroundColor = "orange";
+        };
+
+        // 2. Box1 click → increase size
+        document.getElementById("box1").onclick = function () {
+            this.style.width = "150px";
+            this.style.height = "150px";
+        };
+
+        // 3. Box2 click → change color
+        document.getElementById("box2").onclick = function () {
+            this.style.backgroundColor = "red";
+        };
+
+        // 4. Circle click → move to right
+        document.getElementById("circle").onclick = function () {
+            this.style.marginLeft = "80px";
+        };
+
+        // 5. Text hover → hide + show
+        let textBlock = document.getElementById("textBlock");
+
+        textBlock.onmouseover = function () {
+            textBlock.style.visibility = "hidden";
+        };
+
+        textBlock.onmouseout = function () {
+            textBlock.style.visibility = "visible";
+        };
+    </script>
+
+</body>
+</html>
