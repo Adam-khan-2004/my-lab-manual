@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.panel {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 6px;
+    margin: 8px 0;
+}
+
+button {
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.output {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    min-height: 30px;
+}

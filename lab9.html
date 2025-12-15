@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Control Panel</title>
+<link rel="stylesheet" href="lab9.css">
+</head>
+<body>
+
+<h2>Simple Data Control Panel</h2>
+
+<div class="panel">
+    <label>Enter Name:</label>
+    <input id="nameInput" type="text" placeholder="Type something">
+
+    <label>Select Action:</label>
+    <select id="actionSelect">
+        <option value="upper">Convert to UPPERCASE</option>
+        <option value="lower">Convert to lowercase</option>
+        <option value="reverse">Reverse text</option>
+        <option value="count">Count characters</option>
+    </select>
+
+    <button id="runBtn">Run Action</button>
+</div>
+
+<h3>Output:</h3>
+<div id="outputBox" class="output">Nothing yet</div>
+
+<script>
+    const input = document.getElementById("nameInput");
+    const actionSelect = document.getElementById("actionSelect");
+    const outputBox = document.getElementById("outputBox");
+    const runBtn = document.getElementById("runBtn");
+
+    function useCallback(fn) {
+        fn();
+    }
+
+    function processAction() {
+        const text = input.value;
+        let result = "";
+
+        switch(actionSelect.value) {
+            case "upper":
+                result = text.toUpperCase();
+                break;
+
+            case "lower":
+                result = text.toLowerCase();
+                break;
+
+            case "reverse":
+                result = text.split("").reverse().join("");
+                break;
+
+            case "count":
+                result = "Length: " + text.length;
+                break;
+        }
+
+        outputBox.textContent = result;
+    }
+
+    runBtn.addEventListener("click", () => {
+        useCallback(processAction);
+    });
+</script>
+
+</body>
+</html>

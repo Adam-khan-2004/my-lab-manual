@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Management System</title>
+<style>
+    body { font-family: Arial; padding: 20px; }
+    input { margin: 4px; padding: 5px; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 6px; }
+    .top { background-color: yellow; }
+</style>
+</head>
+<body>
+
+<h2>Student Management System</h2>
+
+<!-- INPUT FORM -->
+Name: <input type="text" id="name">
+Roll: <input type="text" id="roll">
+CGPA: <input type="number" id="cgpa" step="0.01">
+<button onclick="addStudent()">Add</button>
+<button onclick="updateStudent()">Update</button>
+
+<br><br>
+
+
+<!-- TABLE -->
+<table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>CGPA</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<script>
+// Array for storing students
+let students = [];
+let updateIndex = -1;
+
+// Add student
+function addStudent() {
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+    let cgpa = document.getElementById("cgpa").value;
+
+    students.push({ name, roll, cgpa });
+    display();
+    clearInputs();
+}
+
+// Delete student
+function deleteStudent(i) {
+    students.splice(i, 1);
+    display();
+}
+
+// Set values for update
+function editStudent(i) {
+    updateIndex = i;
+    document.getElementById("name").value = students[i].name;
+    document.getElementById("roll").value = students[i].roll;
+    document.getElementById("cgpa").value = students[i].cgpa;
+}
+
+// Update student
+function updateStudent() {
+    if (updateIndex === -1) return;
+
+    students[updateIndex].name = document.getElementById("name").value;
+    students[updateIndex].roll = document.getElementById("roll").value;
+    students[updateIndex].cgpa = document.getElementById("cgpa").value;
+
+    updateIndex = -1;
+    display();
+    clearInputs();
+}
+
+
+// Display table
+function display() {
+    let table = document.getElementById("table");
+    table.innerHTML = `
+        <tr>
+            <th>Name</th><th>Roll</th><th>CGPA</th><th>Action</th>
+        </tr>
+    `;
+
+    let topCgpa = Math.max(...students.map(s => parseFloat(s.cgpa)));
+
+    students.forEach((s, i) => {
+        let highlight = s.cgpa == topCgpa ? "class='top'" : "";
+        table.innerHTML += `
+            <tr ${highlight}>
+                <td>${s.name}</td>
+                <td>${s.roll}</td>
+                <td>${s.cgpa}</td>
+                <td>
+                    <button onclick="editStudent(${i})">Edit</button>
+                    <button onclick="deleteStudent(${i})">Delete</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+// Clear input fields
+function clearInputs() {
+    document.getElementById("name").value = "";
+    document.getElementById("roll").value = "";
+    document.getElementById("cgpa").value = "";
+}
+</script>
+
+</body>
+</html>
